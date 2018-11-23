@@ -8,6 +8,7 @@ import Login from '@/views/Login/Login.vue'
 import Index from '@/views/Index/Index.vue'
 import Home from '@/views/Home/Home.vue'
 import UserAdd from '@/views/UserAdd/UserAdd.vue'
+import UserManage from '@/views/UserManage/UserManage.vue'
 
 
 
@@ -40,6 +41,11 @@ export default new Router({
           name: 'useradd',
           component: UserAdd
         },
+        {
+          path: '/usermanage',
+          name: 'usermanage',
+          component: UserManage
+        }
       ]
     }
 
