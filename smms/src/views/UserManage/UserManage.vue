@@ -47,10 +47,10 @@
                             <el-button
                             size="mini"
                             type="danger"
-                            @click="handleDelete(scope.$index, scope.row)"><i class="el-icon-delete">删除</el-button>
+                            @click="handleDelete(scope.$index, scope.row)"><i class="el-icon-delete"></i>删除</el-button>
                         </template>
-                    </el-table-column>
-                    
+                    </el-table-column>   
+
                 </el-table>
             </el-card>
         </el-main>
@@ -79,6 +79,12 @@ export default {
   methods: {
       handleSelectionChange(val) {
         this.multipleSelection = val;
+      },
+      handleEdit() {
+        console.log('修改当前用户');
+      },
+      handleDelete() {
+        console.log('删除当前用户');
       }
     }
 };
