@@ -9,6 +9,7 @@ import Index from '@/views/Index/Index.vue'
 import Home from '@/views/Home/Home.vue'
 import UserAdd from '@/views/UserAdd/UserAdd.vue'
 import UserManage from '@/views/UserManage/UserManage.vue'
+import EditPassword from '@/views/EditPassword/EditPassword.vue'
 
 
 
@@ -45,6 +46,11 @@ export default new Router({
           path: '/usermanage',
           name: 'usermanage',
           component: UserManage
+        },
+        {
+          path: '/editpassword',
+          name: 'editpassword',
+          component: EditPassword
         }
       ]
     }
