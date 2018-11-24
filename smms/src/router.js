@@ -10,6 +10,9 @@ import Home from '@/views/Home/Home.vue'
 import UserAdd from '@/views/UserAdd/UserAdd.vue'
 import UserManage from '@/views/UserManage/UserManage.vue'
 import EditPassword from '@/views/EditPassword/EditPassword.vue'
+import GoodsManage from '@/views/GoodsManage/GoodsManage.vue'
+import GoodsAdd from '@/views/GoodsAdd/GoodsAdd.vue'
+import SalesCount from '@/views/SalesCount/SalesCount.vue'
 
 
 
@@ -51,6 +54,21 @@ export default new Router({
           path: '/editpassword',
           name: 'editpassword',
           component: EditPassword
+        },
+        {
+          path: '/goodsmanage',
+          name: 'goodsmanage',
+          component: GoodsManage
+        },
+        {
+          path: '/goodsadd',
+          name: 'goodsadd',
+          component: GoodsAdd
+        },
+        {
+          path: '/salescount',
+          name: 'salescount',
+          component: SalesCount
         }
       ]
     }

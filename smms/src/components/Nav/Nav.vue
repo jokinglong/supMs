@@ -23,7 +23,7 @@
         <!-- 导航三 -->
         <el-submenu index="3">
             <template slot="title"><i class="el-icon-edit-outline"></i>统计管理</template>
-            <el-menu-item index="/salescharts">销售统计</el-menu-item>
+            <el-menu-item index="/salescount">销售统计</el-menu-item>
         </el-submenu>
     </el-menu>
 </template>

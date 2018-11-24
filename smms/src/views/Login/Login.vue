@@ -81,7 +81,10 @@ export default {
         // 如果表单所有的内容都合法，就提交
         if (valid) {
           // 成功的提示文字
-          alert("前端验证成功，即将登陆!");
+          this.$message({
+            type: 'success',
+            message: '登录成功，已经跳转到系统首页！'
+          })
           // 成功后获取表单的填写内容
           let username = this.loginform.username;
           let password = this.loginform.password;
