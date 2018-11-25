@@ -165,19 +165,12 @@ export default {
       .el-form {
         width: 350px;
         .el-form-item {
-          height: 30px;
           .el-form-item__content {
-            height: 30px;
             .el-input {
-              height: 30px;
               .el-input__inner {
-                width: 240px;
-                height: 30px;
+                height: 32px;
                 line-height: 30px;
               }
-            }
-            .el-form-item__error {
-              margin-top: 4px;
             }
           }
         }

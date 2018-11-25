@@ -33,6 +33,9 @@
   </div>
 </template>
 <script>
+// 引入qs
+import qs from 'qs';
+
 export default {
   data() {
      // 自定义验证密码一致性函数
@@ -80,17 +83,33 @@ export default {
       this.$refs[formName].validate(valid => {
         // 如果表单所有的内容都合法，就提交
         if (valid) {
-          // 成功的提示文字
-          this.$message({
-            type: 'success',
-            message: '登录成功，已经跳转到系统首页！'
-          })
-          // 成功后获取表单的填写内容
-          let username = this.loginform.username;
-          let password = this.loginform.password;
+          //前端验证成功获取表单的填写内容
+          let loginData = {
+            username : this.loginform.username,
+            password : this.loginform.password
+          }
+          // 允许携带cookie
+          this.axios.defaults.withCredentials=true;
+          // 发送请求给后端
+          this.axios.post('http://127.0.0.1:3333/users/checklogin',
+            qs.stringify(loginData),
+            { headers: {'Content-Type':'application/x-www-form-urlencoded'} }
+          ).then(response => {
+            if(response.data.rstCode === 1){
+              this.$message({
+                type:'success',
+                message:response.data.msg
+              })
+              // 后台验证成功后，800毫秒后跳转到后台系统
+              setTimeout(() =>{
+                this.$router.push('/')
+              },800)
 
-          // 跳转到后端系统首页
-          this.$router.push('/');
+            }else{
+              this.$message.error(response.data.msg)
+            }
+          })
+
 
         } else {
           // 如果表单中有任何一项不合法，就验证失败，并输出提示
